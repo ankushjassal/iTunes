@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="Stylesheet" href="Styles/bootstrap.min.css" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
-<script type="text/javascript" src="Scripts/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script type="text/javascript" src="Scripts/index.js"></script>
 <title>Example</title>
 <meta charset="utf-8">
@@ -17,21 +17,51 @@
 <div class="col-md-8">
 <div class="display_data">
 <h2>Display albums</h2>
-<input type="text" ng-model='searchText' placeholder="search here" class="form-control" /><br /><br />
+<input type="text" ng-model='searchText' placeholder="search here" class="form-control" /><br />
 
-<table class="table table-hover">
+<table class="table table-hover table-striped table-responsive">
 <thead>
-<th>Song Author</th>
-<th>Song URI</th>
+<th>Song Title</th>
 <th>Song Rights</th>
-<th>Song updated</th>
+<th>Song Category</th>
 </thead>
+<tbody>
 <tr ng-repeat="songs in albums">
-<td>{{songs.author.name.label}}</td>
-<td>{{songs.author.uri.label}}</td>
-<td>{{songs.rights.label}}</td>
-<td>{{songs.updated.label}}</td>
+<td>{{songs.entry[0].title.label}}</td>
+<td>{{songs.entry[0].rights.label}}</td>
+<td>{{songs.entry[0].category.attributes.term}}</td>
 </tr>
+<tr ng-repeat="songs in albums">
+<td>{{songs.entry[1].title.label}}</td>
+<td>{{songs.entry[1].rights.label}}</td>
+<td>{{songs.entry[1].category.attributes.term}}</td>
+</tr>
+<tr ng-repeat="songs in albums">
+<td>{{songs.entry[2].title.label}}</td>
+<td>{{songs.entry[2].rights.label}}</td>
+<td>{{songs.entry[2].category.attributes.term}}</td>
+</tr>
+<tr ng-repeat="songs in albums">
+<td>{{songs.entry[3].title.label}}</td>
+<td>{{songs.entry[3].rights.label}}</td>
+<td>{{songs.entry[3].category.attributes.term}}</td>
+</tr>
+<tr ng-repeat="songs in albums">
+<td>{{songs.entry[4].title.label}}</td>
+<td>{{songs.entry[4].rights.label}}</td>
+<td>{{songs.entry[4].category.attributes.term}}</td>
+</tr>
+<tr ng-repeat="songs in albums">
+<td>{{songs.entry[4].title.label}}</td>
+<td>{{songs.entry[4].rights.label}}</td>
+<td>{{songs.entry[4].category.attributes.term}}</td>
+</tr>
+<tr ng-repeat="songs in albums">
+<td>{{songs.entry[5].title.label}}</td>
+<td>{{songs.entry[5].rights.label}}</td>
+<td>{{songs.entry[5].category.attributes.term}}</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
